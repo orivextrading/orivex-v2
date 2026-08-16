@@ -140,8 +140,8 @@
   @media(max-width:960px){ .hero-grid{ grid-template-columns:1fr; } }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--font-mono); font-size:12px; color:var(--accent-soft);
-    border:1px solid rgba(140,182,255,0.3); padding:7px 14px; border-radius:999px;
+    font-family:var(--font-arabic); font-size:14.5px; font-weight:600; color:var(--accent-soft);
+    border:1px solid rgba(140,182,255,0.3); padding:9px 16px; border-radius:999px;
     margin-bottom:22px; background:rgba(47,111,237,0.08);
   }
   .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--signal); animation:pulse 1.8s infinite; }
@@ -182,7 +182,7 @@
   /* ---------- Section heads ---------- */
   .section-head{ max-width:640px; margin-bottom:52px; }
   .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-  .kicker{ font-family:var(--font-mono); font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.08em; margin-bottom:10px; display:block; }
+  .kicker{ font-family:var(--font-arabic); font-size:15px; color:var(--accent); font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:block; }
   .section-head h2{ font-size:clamp(26px,3.4vw,38px); font-weight:700; margin-bottom:14px; letter-spacing:-0.01em; }
   .section-head p{ color:var(--ink-soft); font-size:16px; }
  
@@ -519,6 +519,9 @@
   .course-perks{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
   .perk-chip{ font-size:11px; font-weight:600; color:var(--accent-soft); background:rgba(47,111,237,0.1); border:1px solid rgba(140,182,255,0.25); padding:5px 10px; border-radius:999px; display:inline-flex; align-items:center; gap:5px; }
   .perk-chip svg{ width:12px; height:12px; }
+  .seats-badge{ font-size:11px; font-weight:700; color:#FCA5A5; background:rgba(220,38,38,0.14); border:1px solid rgba(248,113,113,0.35); padding:5px 10px; border-radius:999px; display:inline-flex; align-items:center; gap:5px; }
+  .seats-badge svg{ width:12px; height:12px; }
+  .seats-badge .pulse-dot{ width:6px; height:6px; border-radius:50%; background:#F87171; animation:pulse 1.8s infinite; }
   .journey-track{ display:flex; align-items:center; gap:5px; margin-bottom:16px; }
   .journey-track span{ height:6px; flex:1; border-radius:99px; background:rgba(255,255,255,0.1); }
   .journey-track span.filled{ background:linear-gradient(90deg, var(--accent), var(--accent-soft)); }
@@ -1305,7 +1308,7 @@
       num:'01', level:'مبتدئ', title:'المستوى الأول',
       desc:'نقطة الانطلاق الصح: تفهم السوق، تتعلم إدارة رأس المال، وتاخد أساسيات التحليل قبل ما تدخل صفقة واحدة.',
       duration:'٤ أسابيع', lessonsCount:'8 دروس', hours:'6 ساعات', testsCount:'3 اختبارات',
-      certificate:true, liveSupport:true, oldPrice:'30', price:'20',
+      certificate:true, liveSupport:true, oldPrice:'30', price:'20', seatsLeft:7,
       lessons:[
         {title:'مقدمة في أسواق التداول العالمية', desc:'إيه هو السوق، وإزاي بيتحرك السعر، والفرق بين المتداول والمستثمر.', dur:'12:20'},
         {title:'الفرق بين الفوركس والذهب والمؤشرات', desc:'كل سوق له طبيعته، هنا هتعرف تختار السوق المناسب لأسلوبك.', dur:'15:05'},
@@ -1319,7 +1322,7 @@
       num:'02', level:'متوسط', title:'المستوى الثاني',
       desc:'تتعمق في قراءة الشارت، الأنماط السعرية، وأدوات التحليل اللي بتستخدمها الديسكات الاحترافية.',
       duration:'٦ أسابيع', lessonsCount:'8 دروس', hours:'9 ساعات', testsCount:'3 اختبارات',
-      certificate:true, liveSupport:true, oldPrice:'45', price:'30',
+      certificate:true, liveSupport:true, oldPrice:'45', price:'30', seatsLeft:5,
       lessons:[
         {title:'قراءة الشموع اليابانية باحتراف', desc:'كل شمعة بتحكي قصة، هتتعلم تفهم الرسالة اللي وراها.', dur:'19:15'},
         {title:'الأنماط السعرية وتأكيداتها', desc:'أشهر الأنماط اللي بتتكرر في السوق وإزاي تتأكد منها.', dur:'22:00'},
@@ -1333,7 +1336,7 @@
       num:'03', level:'متقدم', title:'المستوى الثالث',
       desc:'استراتيجيات متخصصة للتعامل مع XAUUSD وأزواج العملات الرئيسية، وقت التداول المناسب لكل سوق.',
       duration:'٦ أسابيع', lessonsCount:'15 درس', hours:'11 ساعة', testsCount:'4 اختبارات',
-      certificate:true, liveSupport:true, oldPrice:'70', price:'50',
+      certificate:true, liveSupport:true, oldPrice:'70', price:'50', seatsLeft:4,
       lessons:[
         {title:'خصائص سوق الذهب مقابل الفوركس', desc:'إيه اللي بيحرك سعر الذهب وإزاي يختلف عن سوق العملات.', dur:'16:00'},
         {title:'أفضل أوقات التداول لكل زوج', desc:'توقيتات الجلسات العالمية وتأثيرها على السيولة والتقلب.', dur:'13:25'},
@@ -1347,7 +1350,7 @@
       num:'04', level:'احترافي', title:'المستوى الرابع',
       desc:'بناء خطة تداول متكاملة، إدارة المحفظة على المدى الطويل، وفهم سيكولوجية التداول الاحترافي.',
       duration:'٨ أسابيع', lessonsCount:'10 دروس', hours:'14 ساعة', testsCount:'4 اختبارات',
-      certificate:true, liveSupport:true, oldPrice:'140', price:'100',
+      certificate:true, liveSupport:true, oldPrice:'140', price:'100', seatsLeft:3,
       lessons:[
         {title:'بناء خطة تداول شخصية متكاملة', desc:'تجمع كل اللي اتعلمته في خطة واحدة واضحة ومكتوبة.', dur:'23:00'},
         {title:'سيكولوجية التداول والانضباط النفسي', desc:'أكبر عدو للمتداول مش السوق، هو قراراته تحت الضغط.', dur:'20:15'},
